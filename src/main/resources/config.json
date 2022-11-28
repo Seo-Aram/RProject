@@ -1,0 +1,8 @@
+{
+	"jdbc": "com.mysql.cj.jdbc.Driver",
+	"dbUrl":"jdbc:mysql://localhost:3306/r_project",
+	"dbUser":"manager",
+	"dbPassword":"r_221128",
+	"resourcesURI": "/resouces/profile/",
+	"fileSaveDir" : "C:\\Users\\LG\\Documents\\himidea_fullstack\\dev\\GitHub\\classproject\\spring\\TodoSpringMVC\\src\\main\\webapp\\resources\\profile"
+}

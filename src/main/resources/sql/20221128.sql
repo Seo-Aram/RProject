@@ -1,0 +1,22 @@
+CREATE TABLE `rmember` (
+  `userIdx` int NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(225) COLLATE utf8mb3_bin DEFAULT '',
+  `userId` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `userPw` varchar(256) COLLATE utf8mb3_bin NOT NULL,
+  `userName` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `eMail` varchar(256) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `phone` varchar(45) COLLATE utf8mb3_bin NOT NULL,
+  `nation` int NOT NULL,
+  `address1` varchar(256) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `address2` varchar(256) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `postNum` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `location` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `bYear` int NOT NULL,
+  `bMonth` int NOT NULL,
+  `bDay` int NOT NULL,
+  `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`userIdx`),
+  UNIQUE KEY `userIdx_UNIQUE` (`userIdx`),
+  UNIQUE KEY `userId_UNIQUE` (`userId`),
+  KEY `uuid_IDX` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
