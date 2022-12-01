@@ -14,7 +14,7 @@
     </head>
     <body>
         <form method="post">
-            <input type="text" name="userId" id="userId">
+            <input type="email" name="userId" id="userId">
             <input type="password" name="userPw" id="userPw">
             <input type="submit" value="login">
         </form>

@@ -3,9 +3,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.util.Locale;
 
 @Log4j2
 @ExtendWith(SpringExtension.class)
@@ -32,5 +33,12 @@ public class EncryptTest {
                 + passwordEncoder.matches(pw, passwordEncoder.encode("codevang")));
 
 
+    }
+
+    @Test
+    public void testLocale() {
+        Locale locale = new Locale("kr");
+
+        log.info("");
     }
 }

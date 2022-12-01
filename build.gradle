@@ -71,7 +71,7 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto
     implementation group: 'org.springframework.security', name: 'spring-security-crypto', version: '5.7.5'
 
-
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.0'
 
 }
 

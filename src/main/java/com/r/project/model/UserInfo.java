@@ -15,7 +15,6 @@ public class UserInfo {
     private String userPw;
     private String userName;
     private long regDate;
-    private String eMail;
     private int nation;
     private String phone;
     private String address1;

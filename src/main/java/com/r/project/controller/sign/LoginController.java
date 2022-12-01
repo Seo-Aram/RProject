@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -38,12 +39,14 @@ public class LoginController {
             @RequestParam("userPw") String userPw,
             @RequestParam(name="isRemember", required = false) boolean isRemember,
             HttpServletRequest request,
-            HttpServletResponse response
+            HttpServletResponse response,
+            RedirectAttributes redirectAttributes
     ) throws IOException, SQLException {
 
         UserInfo userInfo = signInService.signIn(userId, userPw);
         if(userInfo == null) {
-            response.sendRedirect("/sign/in?result=e");
+            redirectAttributes.addFlashAttribute("result","e"); // 1회성 소멸
+            response.sendRedirect("/sign/in");
             return;
         }
 
@@ -67,6 +70,7 @@ public class LoginController {
                 log.warn("cookie create");
             }
         }
-        response.sendRedirect("/sign/in?result=t");
+        redirectAttributes.addFlashAttribute("result","t");
+        response.sendRedirect("/sign/in");
     }
 }
